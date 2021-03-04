@@ -17,7 +17,7 @@ class m210303_060840_create_comments_table extends Migration
             'name' => $this->string()->notNull(),
             'email' => $this->string()->notNull(),
             'text' => $this->text(),
-            'file' => $this->string()->notNull(),
+            'image' => $this->string()->notNull(),
             'activ' => $this->boolean()->defaultValue(0),
         ]);
     }
