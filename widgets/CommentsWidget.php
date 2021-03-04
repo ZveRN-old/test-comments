@@ -15,8 +15,8 @@ class CommentsWidget extends Widget
 
         if ($model->load(\Yii::$app->request->post())) {
             $model->file = UploadedFile::getInstance($model, 'file');
-            $model->file->saveAs('img/' . $model->file->baseName . '.' . $model->file->extension);
-            $model->image = $model->file->baseName . '.' . $model->file->extension;
+            $model->image = time() . '.' . $model->file->extension;
+            $model->file->saveAs('img/' . $model->image);
 
             $model->save();
         }
